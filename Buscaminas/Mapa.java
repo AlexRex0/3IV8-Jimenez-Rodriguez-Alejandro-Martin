@@ -10,7 +10,9 @@ public class Mapa{
     int aux, contMinas = 0;
 
     public void generMapa(){
-        
+        // esta funcino me va a generar el tablero de juego
+
+        //genero con un random las minas en el tablero
         for(int i = 0; i <= 11; ++i){
             for(int j = 0; j <= 11; ++j){
                 aux =(int) Math.floor(Math.random()*6);;
@@ -23,6 +25,7 @@ public class Mapa{
                 }
             }
         }
+        //checo las bombas que tiene cada casilla a su alrededor
         for(int i = 1; i <= 10; ++i){
             for(int j = 1; j <= 10; ++j){
                 aux = 0;
@@ -53,6 +56,8 @@ public class Mapa{
                 mapa[i][j].setAdyacentes(aux);
             }
         }
+
+        //inicializo mi matriz de visitados
         for(int i = 0;  i < 12; ++i){
             for(int j  = 0; j < 12; ++j){
                 noVisitados[i][j] = false;
@@ -60,6 +65,7 @@ public class Mapa{
         }
     }
     
+    // este metodo nos va a descubrir los casillas adyacentes de la casilla que seleccione el usuario
     public void descubrir(int i, int j){
         if(i < 1 || i > 10 || j < 1 || j > 10){
             return;
@@ -79,6 +85,8 @@ public class Mapa{
         }
     }
     boolean acabo = false;
+
+    // esta informacion nos va a imprimir el mapa del juego en su estado actual
     public void imprimir(){
         int contador = 0;
         System.out.print("   ");

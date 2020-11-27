@@ -1,5 +1,5 @@
 public class Casilla{
-    
+    // Esta clase guarda la informacion de cada casilla en el tablero
     private boolean bomba, descubierto; 
     private int adyacentes;
 
@@ -10,6 +10,7 @@ public class Casilla{
         this.bomba = bomba;
     }
 
+    // set para establecer el vaor y get para obetener el valor
     public void setBomba(boolean bomba){
         this.bomba = bomba;
     }
